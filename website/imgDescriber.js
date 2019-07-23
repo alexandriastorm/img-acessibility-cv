@@ -1,15 +1,18 @@
+
 function getImageDescription() {
 
-  var imgFile = document.getElementById('uploadImage').value;
-  var form = new FormData();
-  form.append("image", imgFile);
+  // var imgFile = document.getElementById('uploadImage').files[0];
+  // var form = new FormData();
+  // form.append("file", imgFile);
+
+  var imgLink = document.getElementById('img-url').value;
 
   var http = new XMLHttpRequest();
   var url = 'https://westus2.api.cognitive.microsoft.com/vision/v1.0/describe';
   http.open('POST', url, true);
 
   //Send the proper header information along with the request
-  http.setRequestHeader('Content-Type', 'multipart/form-data');
+  http.setRequestHeader('Content-Type', 'application/json');
   http.setRequestHeader('Ocp-Apim-Subscription-Key', '9f0aad6adcaa4f6f8a2f1c4237a7421b');
 
   http.onreadystatechange = function() {
@@ -21,46 +24,47 @@ function getImageDescription() {
       }
   }
 
-  // http.send("{\"url\":\"" + imgLink + "\"}" );
-  http.send(form);
-  // renderUploadedImage(imgLink);
+  http.send("{\"url\":\"" + imgLink + "\"}" );
+  // http.send(imgData);
+  renderUploadedImage(imgLink);
 }
 
-// DISPLYAING IMG FROM LINK
-// function renderUploadedImage(imgLink) {
-//   var src = imgLink;
-//   showImage(src, 276,270, "Google Logo");
-// }
-//
-// function showImage(src, width, height, alt) {
-//     var img = document.createElement("img");
-//     img.src = src;
-//     img.width = width;
-//     img.height = height;
-//     img.alt = alt;
-//     document.getElementById('response').appendChild(img);
-// }
+function renderUploadedImage(imgLink) {
+  var src = imgLink;
+  showImage(src, 276,270, "Google Logo");
+}
 
-// function uploadImageFile() {
-//   var imgElem = document.querySelector('img');
-//   var file = document.querySelector('input[type=file]').files[0]; //sames as here
-//   var reader  = new FileReader();
-//
-//   reader.onloadend = function () {
-//       imgElem.src = reader.result;
-//       imgLink = reader.result;
-//   }
-//
-//   if (file) {
-//     reader.readAsDataURL(file); //reads the data as a URL
-//     imgLink = document.getElementById()
-//   } else {
-//       imgElem.src = "";
-//   }
-// }
+function showImage(src, width, height, alt) {
+    var img = document.createElement("img");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    img.alt = alt;
+    document.getElementById('response').appendChild(img);
+}
+
+function uploadImageFile() {
+  var imgElem = document.querySelector('img');
+  var file = document.querySelector('input[type=file]').files[0]; //sames as here
+  var reader  = new FileReader();
+
+  reader.onloadend = function () {
+      imgElem.src = reader.result;
+      imgLink = reader.result;
+  }
+
+  if (file) {
+    reader.readAsDataURL(file); //reads the data as a URL
+    imgLink = document.getElementById()
+  } else {
+      imgElem.src = "";
+  }
+}
 
 function handleFileSelect(selector) {
   var files = document.getElementById(selector).files;
+
+  console.log(files);
 
   for (var i = 0, f; f = files[i]; i++) {
 
@@ -94,10 +98,12 @@ function handleFileSelect(selector) {
                 span.innerHTML = ['<img class="thumb" src="', e.target.result,
                                     '" title="', escape(theFile.name), '"/>'].join('');
                 fileOutput.insertBefore(span, null);
+
+                imgData = reader.result;
             };
         })(f);
 
         // Read in the image file as a data URL.
-        reader.readAsDataURL(f);
+        reader.readAsBinaryString(f);
     }
 }
