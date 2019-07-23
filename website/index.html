@@ -124,19 +124,14 @@
 
               <script src="imgDescriber.js"></script>
 
-              <p style="color:white;">Select image to get description:
-                  <br>
-                  <!-- <input type="file" accept="image/*" id="uploadImage" name="files[]" size=40 onchange="handleFileSelect('uploadImage')" />
-                  </br>
-                  <button type="button" onclick="getImageDescription()">Submit Image</button> -->
-                  <textarea type="text" id="img-url"></textarea>
-                  <br>
-                  <img src="" height="200">
-                  <button type="button" onclick="getImageDescription()">Submit Image!</button>
-              </p>
+              <p> Upload an Image </p></br>
+              <input type="file" id="img-upload" name="img">
+              <button type="button" onclick="getImageDescriptionUpload()">Submit Image</button>
+
               <br>
               <div id="response">
-                <output id="thumbnail"></output>
+                <img id="imgPreview"></img>
+                <div id="imgDescrip"></div>
               </div>
 
 
