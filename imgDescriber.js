@@ -11,9 +11,11 @@ function getImageDescription() {
   http.setRequestHeader('Ocp-Apim-Subscription-Key', '9f0aad6adcaa4f6f8a2f1c4237a7421b')
 
   http.onreadystatechange = function() {
-      console.log(imgLink);
       if(http.readyState == 4 && http.status == 200) {
-          document.body.innerHTML = http.response;
+        // extract highest caption text element
+        var jsonResp = JSON.parse(http.response);
+        var caption = jsonResp.description.captions[0].text;
+        document.body.innerHTML = caption;
       }
   }
 
