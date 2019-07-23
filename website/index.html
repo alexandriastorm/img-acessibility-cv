@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Image Accesibility</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/core-img/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- /Preloader -->
+
+    <!-- Top Search Form Area -->
+    <div class="top-search-area">
+        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <!-- Close -->
+                        <button type="button" class="btn close-btn" data-dismiss="modal"><i class="ti-close"></i></button>
+                        <!-- Form -->
+                        <form action="index.html" method="post">
+                            <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Area Start -->
+    <header class="header-area">
+        <!-- Main Header Start -->
+        <div class="main-header-area">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between" id="alimeNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="./index.html"><img src="" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+                            <!-- Menu Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul id="nav">
+                                    <li class="active"><a href="./index.html">Home</a></li>
+                                    <li><a href="./about.html">About</a></li>
+                                    <li><a href="./gallery.html">Gallery</a></li>
+                                    <li><a href="./contact.html">Contact</a></li>
+                                </ul>
+
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+    <!-- Welcome Area Start -->
+    <section class="welcome-area">
+            <!-- Single Slide -->
+            <div class="single-welcome-slide bg-img bg-overlay" style="background-image: url(img/bg-img/0.jpeg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Welcome Text -->
+                        <div class="col-12 col-lg-8 col-xl-6">
+                            <div class="welcome-text">
+                                <h2 data-animation="bounceInDown" data-delay="900ms">Computer Vision for Accessibility</h2>
+                                <p data-animation="bounceInDown" data-delay="500ms">An image analyzer utilizing Azure Cognitive Services Computer Vision to create accesibility for users on Search Engines.</p>
+                                <div class="hero-btn-group" data-animation="bounceInDown" data-delay="100ms">
+                                    <a href="#" class="btn alime-btn mb-3 mb-sm-0 mr-4">Try Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Welcome Area End -->
+
+    <!-- Gallery Area Start -->
+    <div class="alime-portfolio-area section-padding-80 clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Projects Menu -->
+
+                </div>
+            </div>
+
+            <div class="row alime-portfolio">
+
+
+              <script src="imgDescriber.js"></script>
+
+                <textarea type="text" id="img-url"></textarea>
+                <br>
+                <button type="button" onclick="getImageDescription()">Submit Image!</button>
+
+                <br>
+                <br>
+
+                <div id="response">
+                </div>
+
+
+
+
+
+
+                <!-- Single Gallery Item
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="single-portfolio-content">
+                        <img src="img/bg-img/4.jpg" alt="">
+                        <div class="hover-content">
+                            <a href="img/bg-img/4.jpg" class="portfolio-img">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                 Single Gallery Item
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="single-portfolio-content">
+                        <img src="img/bg-img/5.jpg" alt="">
+                        <div class="hover-content">
+                            <a href="img/bg-img/5.jpg" class="portfolio-img">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                Single Gallery Item
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp" data-wow-delay="700ms">
+                    <div class="single-portfolio-content">
+                        <img src="img/bg-img/6.jpg" alt="">
+                        <div class="hover-content">
+                            <a href="img/bg-img/6.jpg" class="portfolio-img">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                 Single Gallery Item
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="single-portfolio-content">
+                        <img src="img/bg-img/7.jpg" alt="">
+                        <div class="hover-content">
+                            <a href="img/bg-img/7.jpg" class="portfolio-img">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                 Single Gallery Item
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video country mb-30 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="single-portfolio-content">
+                        <img src="img/bg-img/8.jpg" alt="">
+                        <div class="hover-content">
+                            <a href="img/bg-img/8.jpg" class="portfolio-img">+</a>
+                        </div>
+                    </div>
+                </div>
+-->
+
+        </div>
+    </div>
+
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="js/alime.bundle.js"></script>
+    <!-- Active -->
+    <script src="js/default-assets/active.js"></script>
+
+</body>
+
+</html>
