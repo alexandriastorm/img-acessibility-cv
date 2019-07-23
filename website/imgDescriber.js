@@ -1,3 +1,5 @@
+var jsonResp;
+
 function getFileBytes(aFile) {
   var b64Data = aFile.result.split(',');
   var contentType = 'image/jpeg';
@@ -32,9 +34,9 @@ function getImageDescriptionUpload() {
         var tags = jsonResp.description.tags;
         var description = jsonResp.description.captions[0].text;
         var confidence = jsonResp.description.captions[0].confidence;
-          var caption = final_caption(tags, description, confidence);
-          document.getElementById('imgDescrip').innerHTML = caption;
-          renderUploadedImage(aFile.result);
+        var caption = final_caption(tags, description, confidence);
+        document.getElementById('imgDescrip').innerHTML = caption;
+        renderUploadedImage(aFile.result);
         }
       }
 
