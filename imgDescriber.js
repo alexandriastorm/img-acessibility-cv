@@ -15,26 +15,24 @@ function getImageDescription() {
         // extract highest caption text element
         var jsonResp = JSON.parse(http.response);
         var caption = jsonResp.description.captions[0].text;
-        document.body.innerHTML = caption;
+        document.getElementById('response').innerHTML += caption;
       }
   }
 
   http.send("{\"url\":\"" + imgLink + "\"}" );
- 
- 
-  function add_google_logo() {
-    var src = imgLink;
-    show_image(src, 276,270, "Google Logo");
+  renderUploadedImage(imgLink);
 }
 
-function show_image(src, width, height, alt) {
+function renderUploadedImage(imgLink) {
+  var src = imgLink;
+  showImage(src, 276,270, "Google Logo");
+}
+
+function showImage(src, width, height, alt) {
     var img = document.createElement("img");
     img.src = src;
     img.width = width;
     img.height = height;
     img.alt = alt;
-    document.body.appendChild(img);
+    document.getElementById('response').appendChild(img);
 }
-add_google_logo()
-}
-
