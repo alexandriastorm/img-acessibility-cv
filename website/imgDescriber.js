@@ -1,3 +1,5 @@
+var jsonResp;
+
 function getFileBytes(aFile) {
   var b64Data = aFile.result.split(',');
   var contentType = 'image/jpeg';
@@ -28,7 +30,7 @@ function getImageDescriptionUpload() {
       xhr.onreadystatechange = function() {
         if(xhr.readyState == 4 && xhr.status == 200) {
           // extract highest caption text element
-          var jsonResp = JSON.parse(xhr.response);
+          jsonResp = JSON.parse(xhr.response);
           var caption = jsonResp.description.captions[0].text;
           document.getElementById('imgDescrip').innerHTML = caption;
           renderUploadedImage(aFile.result);
