@@ -11,14 +11,24 @@
 <body>
   <script src="imgDescriber.js"></script>
 
-  <textarea type="text" id="img-url"></textarea>
-  <br>
-  <button type="button" onclick="getImageDescription()">Submit Image!</button>
+  <!-- <textarea type="text" id="img-url"></textarea>
+  <br> -->
 
-  <br>
-  <br>
+  <!-- image upload components -->
+  <!-- <input type="file" id="uploadImage" onchange="uploadImageFile()"><br>
+  <img src="" height="200">
+  <button type="button" onclick="getImageDescription()">Submit Image!</button> -->
 
+
+  <p>Select image to get description:
+      <br>
+      <input type="file" accept="image/*" id="uploadImage" name="files[]" size=40 onchange="handleFileSelect('uploadImage')" />
+      </br>
+      <button type="button" onclick="getImageDescription()">Submit Image</button>
+  </p>
+  <br>
   <div id="response">
+    <output id="thumbnail"></output>
   </div>
 </body>
 </html>
