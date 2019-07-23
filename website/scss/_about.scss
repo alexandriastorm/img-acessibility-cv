@@ -5,7 +5,7 @@
         font-size: 36px;
         display: block;
         margin-bottom: 5px;
-        
+
         @media #{$breakpoint-xs} {
             font-size: 24px;
         }
@@ -116,7 +116,7 @@
 
 .why-choose-us-content {
     @include transition-duration(800ms);
-    background-color: $white;
+    background-color: ##2E61C1;
     padding: 80px 30px 50px;
     border-radius: 10px;
     box-shadow: 3px 0 15px -1px rgba(0, 0, 0, 0.15);
@@ -128,7 +128,7 @@
         @include transition-duration(800ms);
         height: 76px;
         width: 76px;
-        background-color: $primary;
+        background-color: #2E61C1;
         display: inline-block;
         text-align: center;
         line-height: 76px;
@@ -152,11 +152,12 @@
         @include transition-duration(800ms);
         font-size: 14px;
         margin-bottom: 0;
+        color: white
     }
 
     &:hover,
     &:focus {
-        background-color: $primary;
+        background-color: #2E61C1;
 
         .chosse-us-icon {
             background-color: $dark;
