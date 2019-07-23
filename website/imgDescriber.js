@@ -28,8 +28,11 @@ function getImageDescriptionUpload() {
       xhr.onreadystatechange = function() {
         if(xhr.readyState == 4 && xhr.status == 200) {
           // extract highest caption text element
-          var jsonResp = JSON.parse(xhr.response);
-          var caption = jsonResp.description.captions[0].text;
+        var jsonResp = JSON.parse(xhr.response);
+        var tags = jsonResp.description.tags;
+        var description = jsonResp.description.captions[0].text;
+        var confidence = jsonResp.description.captions[0].confidence;
+          var caption = final_caption(tags, description, confidence);
           document.getElementById('imgDescrip').innerHTML = caption;
           renderUploadedImage(aFile.result);
         }
