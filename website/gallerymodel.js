@@ -8,36 +8,46 @@ $('#profPhotos .profPhotoLink > img').bind (
     "mouseenter mouseleave", myImageHover
 );
 
-var Image = require("parse-image");
-function getBase64Version(url){
-    Parse.Cloud.httpRequest({
-        url: url,
-        success: function(response) {
-          // The file contents are in response.buffer.
-          var image = new Image();
-          return image.setData(response.buffer, {
-            success: function() {
-              console.log(image.data().toString("base64"));
-            },
-            error: function(error) {
-              // The image data was invalid.
-            }
-          })
-        },
-        error: function(error) {
-          // The networking request failed.
-        }
-      });
-}
+// var Image = require("parse-image");
+// function getBase64Version(url){
+//     Parse.Cloud.httpRequest({
+//         url: url,
+//         success: function(response) {
+//           // The file contents are in response.buffer.
+//           var image = new Image();
+//           return image.setData(response.buffer, {
+//             success: function() {
+//               console.log(image.data().toString("base64"));
+//             },
+//             error: function(error) {
+//               // The image data was invalid.
+//             }
+//           })
+//         },
+//         error: function(error) {
+//           // The networking request failed.
+//         }
+//       });
+// }
+
+// function getFileByteData(filePath) {
+//   var fs = require('fs');
+//   let fileData = fs.readFileSync(filePath).toString('hex');
+//   let result = [];
+//   for (var i = 0; i < fileData.length; i+=2) {
+//     result.push('0x'+fileData[i]+''+fileData[i+1])
+//   }
+//   return result;
+// }
 
 
 function myImageHover (zEvent) {
     //console.log("tryingagain");
     zEvent = zEvent || window.event;
-    console.log("before", zEvent.type);
-    console.log("before", zEvent);
+    // console.log("before", zEvent.type);
+    // console.log("before", zEvent);
     if (zEvent.type == 'mouseover') {
-        console.log("trying");
+        // console.log("trying");
         console.log ('Entering src: ', zEvent.srcElement.currentSrc);
 
         var bytes = getBase64Version(zEvent.srcElement.currentSrc);
