@@ -108,6 +108,9 @@
     </section>
     <!-- Breadcrumb Area End -->
 
+
+    <img src="img/bg-img/39.jpg" alt="">
+
     <!-- Gallery Area Start -->
     <div class="alime-portfolio-area section-padding-80 clearfix">
         <div class="container-fluid">
@@ -126,21 +129,21 @@
                 </div>
             </div>
 
+            
+            <!-- <div id="galleryDescrip" style="color:white;font-size: 300%;margin-bottom: 5%;font-weight: 1000;"></div> -->
+
             <div class="row alime-portfolio">
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/39.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/39.jpg" class="portfolio-img">+</a>
-                        </div>
+                        <img src="img/bg-img/39.jpg" onmouseover="myImageHover(event)" alt="">
                     </div>
                 </div>
 
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/40.jpg" alt="">
+                        <img src="img/bg-img/40.jpg" onmouseover="myImageHover(this.$)"alt="">
                         <div class="hover-content">
                             <a href="img/bg-img/40.jpg" class="portfolio-img">+</a>
                         </div>
@@ -248,6 +251,15 @@
                 </div>
             </div>
 
+            <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+            <script src="gallerymodel.js"></script>
+
+            <div id="galleryDescrip">
+                <!-- <div id="imgDescrip" style="color:white;font-size: 300%;margin-bottom: 5%;font-weight: 1000;"></div> -->
+            </div>
+
+
+
             <div class="row">
                 <div class="col-12 text-center wow fadeInUp" data-wow-delay="800ms">
                     <a href="#" class="btn alime-btn btn-2 mt-15">View More</a>
@@ -255,6 +267,7 @@
             </div>
         </div>
     </div>
+
     <!-- Gallery Area End -->
 
 

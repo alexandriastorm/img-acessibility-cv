@@ -14,6 +14,7 @@ function getFileBytes(aFile) {
 function getImageDescriptionUpload() {
 
   var file = document.getElementById('img-upload').files[0];
+  console.log(file);
   var fr = new FileReader();
 
   fr.onload = (function(aFile) {
@@ -40,7 +41,7 @@ function getImageDescriptionUpload() {
         }
       }
 
-      xhr.send(byteData);
+      xhr.send(bytes);
     }
   })(fr);
   fr.readAsDataURL(file);
