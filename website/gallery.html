@@ -18,6 +18,57 @@
 
 </head>
 
+<style>
+#popup { color: #000; background-color: #c0c0c0; }
+
+#popup a, #popup a:visited {
+	position: relative;
+	width: 130px;
+	line-height: 30px;
+	text-align: right;
+	padding: 0 10px;
+	margin: 0;
+	border: none;
+	text-decoration: none;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#popup a span {
+	display: none;
+    position: relative;
+}
+
+#popup a:hover { 
+    position: relative;
+	background-color: none; 
+}
+
+/* the IE correction rule */
+#popup a:hover	{
+    position: relative;
+	color: #f00; 
+	background-color: none;
+	text-indent: 0; /* added the default value */ 
+}
+
+#popup a:hover span {
+	display: block;
+	position: relative;
+	top: 0px;
+	left: 170px;
+	width: 320px;
+	margin: 0px;
+	padding: 10px;
+	color: none;
+	font-weight: normal;
+	background: none;
+	text-align: left;
+	border: none;
+}
+</style>
+
+
 <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -132,127 +183,115 @@
             <!-- <div id="galleryDescrip" style="color:white;font-size: 300%;margin-bottom: 5%;font-weight: 1000;"></div> -->
 
             <div class="row alime-portfolio">
+
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/39.jpg" alt="">
+                        <img src="https://i.ytimg.com/vi/Lv4SQy_9VLI/maxresdefault.jpg" onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)" alt="">
+                        <div id="popup">  
+                            <!-- <a id="imgGalleryDescrip"></a> -->
+                            <span><a id="imgGalleryDescrip" ></a></span>
+                        </div>    
                     </div>
                 </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="single-portfolio-content">          
+                        <img src="https://images.unsplash.com/photo-1527374071603-76de89807336?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)" alt="">
+                        <div id='popup'>
+                            <!-- <a id="imgGalleryDescrip"></a> -->
+                            <span><a id="imgGalleryDescrip" ></a></span>
+                        </div>   
+                    </div>
+                </div>
+
+
+                <!-- Single Gallery Item -->
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="single-portfolio-content">
+                        <div class='section'>
+                        <div id="popup">  
+                            <a>hj<img src="https://i.ytimg.com/vi/Lv4SQy_9VLI/maxresdefault.jpg" onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)" alt="">
+                            <span id="imgGalleryDescrip" >ss</span></a>
+                        </div>
+                        </div>    
+                    </div>
+                </div>
+
 
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/40.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/40.jpg" class="portfolio-img">+</a>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)" alt="">
+                        <div id="popup">  
+                            <!-- <a id="imgGalleryDescrip"></a> -->
+                            <span><a id="imgGalleryDescrip" ></a></span>
+                        </div> 
                     </div>
                 </div>
 
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/41.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/41.jpg" class="portfolio-img">+</a>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1532455935509-eb76842cee50?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80" onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)" alt="">
+                        <div id="popup">  
+                            <!-- <a id="imgGalleryDescrip"></a> -->
+                            <span><a id="imgGalleryDescrip" ></a></span>
+                        </div> 
                     </div>
                 </div>
 
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp" data-wow-delay="700ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/42.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/42.jpg" class="portfolio-img">+</a>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1519522880597-3a4a62fbf846?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"  onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)"alt="">
+                        <div id="popup">  
+                            <!-- <a id="imgGalleryDescrip"></a> -->
+                            <span><a id="imgGalleryDescrip" ></a></span>
+                        </div> 
                     </div>
                 </div>
 
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/43.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/43.jpg" class="portfolio-img">+</a>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1516690553959-71a414d6b9b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"  onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)"alt="">
+                        <<div id="popup">  
+                            <!-- <a id="imgGalleryDescrip"></a> -->
+                            <span><a id="imgGalleryDescrip" ></a></span>
+                        </div> 
                     </div>
                 </div>
 
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video country mb-30 wow fadeInUp" data-wow-delay="300ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/44.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/44.jpg" class="portfolio-img">+</a>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1529654674248-a940ce22fe51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"  onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)"alt="">
+                        <div id="popup">  
+                            <!-- <a id="imgGalleryDescrip"></a> -->
+                            <span><a id="imgGalleryDescrip" ></a></span>
+                        </div> 
                     </div>
                 </div>
 
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/45.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/45.jpg" class="portfolio-img">+</a>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"  onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)"alt="">
+                        <div id="popup">  
+                            <!-- <a id="imgGalleryDescrip"></a> -->
+                            <span><a id="imgGalleryDescrip" ></a></span>
+                        </div> 
                     </div>
                 </div>
 
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="700ms">
-                    <div class="single-portfolio-content">
-                        <img src="img/bg-img/46.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/46.jpg" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video country mb-30 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="single-portfolio-content">
-                        <img src="img/bg-img/47.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/47.jpg" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="single-portfolio-content">
-                        <img src="img/bg-img/48.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/48.jpg" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="single-portfolio-content">
-                        <img src="img/bg-img/49.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/49.jpg" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp" data-wow-delay="700ms">
-                    <div class="single-portfolio-content">
-                        <img src="img/bg-img/50.jpg" alt="">
-                        <div class="hover-content">
-                            <a href="img/bg-img/50.jpg" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
             <script src="require.js"></script>
             <script src="gallerymodel.js"></script>
+            <script src="nlpModel.js"></script>
+    
 
 
             <div id="galleryDescrip">

@@ -10,20 +10,20 @@ function animal_count(des) {
     let animal_count = 0;
     var wanted_animal = "____";
     const length = animal_list.length;
-    console.log(length);
+    //console.log(length);
     for (var i=0; i < animal_list.length; i++){
         //console.log(animal_list[i], des, i);
-        console.log(i);
-        console.log(des);
+        //console.log(i);
+        //console.log(des);
         //console.log(des.length);
         if (des.includes(animal_list[i])) {
             animal_count++;
-            console.log("hit");
+            //console.log("hit");
             var wanted_animal = animal_list[i];
         }
     }
-    console.log("final_count:", animal_count)
-    console.log(wanted_animal);
+    //console.log("final_count:", animal_count)
+    //console.log(wanted_animal);
     return [animal_count, wanted_animal]
 }
 
@@ -84,7 +84,6 @@ function final_caption(final_tags, final_description, final_confidence){
         console.log("animal", animal_number[0])
         var animal_des = animal_check(animal_number, wanted_animal, final_description, final_tags) 
         var ans = gender_check(animal_des)
-        print(ans)
         console.log(ans)
         return ans
     }
