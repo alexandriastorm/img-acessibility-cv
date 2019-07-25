@@ -84,7 +84,6 @@ function final_caption(final_tags, final_description, final_confidence){
         console.log("animal", animal_number[0])
         var animal_des = animal_check(animal_number, wanted_animal, final_description, final_tags) 
         var ans = gender_check(animal_des)
-        print(ans)
         console.log(ans)
         return ans
     }
