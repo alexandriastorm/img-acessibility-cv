@@ -71,6 +71,7 @@ function myImageMouseOver (zEvent) {
     // console.log("before", zEvent);
     if (zEvent.type == 'mouseover') {
         // console.log("trying");
+        console.log(zEvent);
         console.log ('Entering src: ', zEvent.srcElement.currentSrc);
         caption = getImageDescription(zEvent.srcElement.currentSrc);
         document.getElementById('popup').style.display = 'block';
