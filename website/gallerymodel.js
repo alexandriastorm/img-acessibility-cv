@@ -8,27 +8,6 @@ $('#profPhotos .profPhotoLink > img').bind (
     "mouseenter mouseleave", myImageHover
 );
 
-/* var Image = require("parse-image");
-function getBase64Version(url){
-    Parse.Cloud.httpRequest({
-        url: url,
-        success: function(response) {
-          // The file contents are in response.buffer.
-          var image = new Image();
-          return image.setData(response.buffer, {
-            success: function() {
-              console.log(image.data().toString("base64"));
-            },
-            error: function(error) {
-              // The image data was invalid.
-            }
-          })
-        },
-        error: function(error) {
-          // The networking request failed.
-        }
-      });
-} */
 
 function getImageDescription(imgLink) {
     //var imgLink = document.getElementById("img-url").value;
@@ -61,13 +40,15 @@ function getImageDescription(imgLink) {
   }
 
 
+
+
 function myImageHover (zEvent) {
     //console.log("tryingagain");
     zEvent = zEvent || window.event;
-    console.log("before", zEvent.type);
-    console.log("before", zEvent);
+    // console.log("before", zEvent.type);
+    // console.log("before", zEvent);
     if (zEvent.type == 'mouseover') {
-        console.log("trying");
+        // console.log("trying");
         console.log ('Entering src: ', zEvent.srcElement.currentSrc);
         caption = getImageDescription(zEvent.srcElement.currentSrc);
         console.log(caption);
