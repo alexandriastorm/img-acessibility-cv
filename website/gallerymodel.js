@@ -1,4 +1,8 @@
 console.log('start2');
+if ('speechSynthesis' in window){
+    console.log('asdf');
+}
+speechSynthesis.speak(new SpeechSynthesisUtterance("asss"));
 //var jsonResp;
 // var tags = jsonResp.description.tags;
 // var description = jsonResp.description.captions[0].text;
@@ -36,6 +40,20 @@ function getImageDescription(imgLink) {
           var caption = final_caption(tags, description, confidence);
           console.log("caption", caption);
           document.getElementById('imgGalleryDescrip').innerHTML = caption;
+          var msg = new SpeechSynthesisUtterance();
+          var voices = window.speechSynthesis.getVoices();
+          console.log(voices);
+          msg.lang = 'en-US';
+          msg.voice = voices[10];
+          msg.volume = 1;
+          msg.rate = 0.75;
+          msg.pitch = 2;
+          msg.text = caption;
+          msg.onend = function(e) {
+              console.log('Finished');
+          }
+          console.log(msg.lang);
+          window.speechSynthesis.speak(msg);
           //document.body.innerHTML = caption;
         }
     }
@@ -56,6 +74,20 @@ function myImageMouseOver (zEvent) {
         console.log ('Entering src: ', zEvent.srcElement.currentSrc);
         caption = getImageDescription(zEvent.srcElement.currentSrc);
         document.getElementById('popup').style.display = 'block';
+       /*  var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        console.log(voices);
+        msg.lang = 'en-US';
+        msg.voice = voices[10];
+        msg.volume = 1;
+        msg.rate = 0.75;
+        msg.pitch = 2;
+        msg.text = "Hello World"
+        msg.onend = function(e) {
+            console.log('Finished');
+        }
+        console.log(msg.lang);
+        window.speechSynthesis.speak(msg); */
     }
     if (zEvent.type == 'mouseout') {
         console.log("Leaving src");
