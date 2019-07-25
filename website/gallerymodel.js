@@ -55,9 +55,11 @@ function myImageMouseOver (zEvent) {
         // console.log("trying");
         console.log ('Entering src: ', zEvent.srcElement.currentSrc);
         caption = getImageDescription(zEvent.srcElement.currentSrc);
+        document.getElementById('popup').style.display = 'block';
     }
     if (zEvent.type == 'mouseout') {
         console.log("Leaving src");
+        
     }
     /* else {
         console.log("after", zEvent);
@@ -73,6 +75,7 @@ function myImageMouseOut (zEvent) {
     zEvent = zEvent || window.event;
     if (zEvent.type == 'mouseout') {
         console.log("Leaving src");
+        document.getElementById('popup').style.display = 'none';
     }
 }
 
