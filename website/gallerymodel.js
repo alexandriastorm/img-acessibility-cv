@@ -21,18 +21,18 @@ function getImageDescription(imgLink) {
     http.onreadystatechange = function() {
         console.log(imgLink);
         if(http.readyState == 4 && http.status == 200) {
-            document.body.innerHTML = http.response;
+            console.log("chitt");
+            //document.body.innerHTML = http.response;
           // extract highest caption text element
           var jsonResp = JSON.parse(http.response);
-          //var caption = jsonResp.description.captions[0].text;
 
           var tags = jsonResp.description.tags;
           var description = jsonResp.description.captions[0].text;
           var confidence = jsonResp.description.captions[0].confidence;
           var caption = final_caption(tags, description, confidence);
-          console.log(caption);
-
-          document.body.innerHTML = caption;
+          console.log("caption", caption);
+          document.getElementById('imgGalleryDescrip').innerHTML = caption;
+          //document.body.innerHTML = caption;
         }
     }
   
@@ -51,7 +51,9 @@ function myImageHover (zEvent) {
         // console.log("trying");
         console.log ('Entering src: ', zEvent.srcElement.currentSrc);
         caption = getImageDescription(zEvent.srcElement.currentSrc);
-        console.log(caption);
+        //console.log(caption);
+        //alert(caption);
+
 
 /*         var bytes = getBase64Version(zEvent.srcElement.currentSrc);
         console.log(bytes);
