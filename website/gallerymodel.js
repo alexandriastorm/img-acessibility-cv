@@ -17,7 +17,7 @@ $('#profPhotos .profPhotoLink > img').bind (
 );
 
 
-function getImageDescription(imgLink) {
+function getImageDescription(imgLink, element) {
     //var imgLink = document.getElementById("img-url").value;
     var http = new XMLHttpRequest();
     var url = 'https://westus2.api.cognitive.microsoft.com/vision/v1.0/describe';
@@ -25,12 +25,12 @@ function getImageDescription(imgLink) {
     //Send the proper header information along with the request
     http.setRequestHeader('Content-type', 'application/json');
     http.setRequestHeader('Ocp-Apim-Subscription-Key', '9f0aad6adcaa4f6f8a2f1c4237a7421b')
-  
+
     http.onreadystatechange = function() {
         console.log(imgLink);
         if(http.readyState == 4 && http.status == 200) {
-            console.log("chitt");
-            //document.body.innerHTML = http.response;
+          console.log("chitt");
+          //document.body.innerHTML = http.response;
           // extract highest caption text element
           var jsonResp = JSON.parse(http.response);
 
@@ -39,7 +39,20 @@ function getImageDescription(imgLink) {
           var confidence = jsonResp.description.captions[0].confidence;
           var caption = final_caption(tags, description, confidence);
           console.log("caption", caption);
-          document.getElementById('imgGalleryDescrip').innerHTML = caption;
+
+          // get parent div
+          var parentDiv = element.parentElement;
+          for (var i = 0; i < parentDiv.childNodes.length; i++) {
+              if (parentDiv.childNodes[i].className == "popup") {
+                parentDiv.childNodes[i].style.display = "block";
+                // get the description
+                var descripDiv = parentDiv.childNodes[i].querySelectorAll("#imgGalleryDescrip");
+                descripDiv[0].innerHTML = caption;
+                break;
+              }
+          }
+
+          // document.getElementById('imgGalleryDescrip').innerHTML = caption;
           var msg = new SpeechSynthesisUtterance();
           var voices = window.speechSynthesis.getVoices();
           console.log(voices);
@@ -57,7 +70,7 @@ function getImageDescription(imgLink) {
           //document.body.innerHTML = caption;
         }
     }
-  
+
     http.send("{\"url\":\"" + imgLink + "\"}" );
   }
 
@@ -71,10 +84,15 @@ function myImageMouseOver (zEvent) {
     // console.log("before", zEvent);
     if (zEvent.type == 'mouseover') {
         // console.log("trying");
-        console.log(zEvent);
         console.log ('Entering src: ', zEvent.srcElement.currentSrc);
-        caption = getImageDescription(zEvent.srcElement.currentSrc);
-        document.getElementById('popup').style.display = 'block';
+        caption = getImageDescription(zEvent.srcElement.currentSrc, zEvent.srcElement);
+        // var parentDiv = zEvent.srcElement.parentElement;
+        // for (var i = 0; i < parentDiv.childNodes.length; i++) {
+        //     if (parentDiv.childNodes[i].className == "popup") {
+        //       parentDiv.childNodes[i].style.display = 'block';
+        //       break;
+        //     }
+        // }
        /*  var msg = new SpeechSynthesisUtterance();
         var voices = window.speechSynthesis.getVoices();
         console.log(voices);
@@ -92,7 +110,7 @@ function myImageMouseOver (zEvent) {
     }
     if (zEvent.type == 'mouseout') {
         console.log("Leaving src");
-        
+
     }
     /* else {
         console.log("after", zEvent);
@@ -108,7 +126,14 @@ function myImageMouseOut (zEvent) {
     zEvent = zEvent || window.event;
     if (zEvent.type == 'mouseout') {
         console.log("Leaving src");
-        document.getElementById('popup').style.display = 'none';
+        var parentDiv = zEvent.srcElement.parentElement;
+        for (var i = 0; i < parentDiv.childNodes.length; i++) {
+            if (parentDiv.childNodes[i].className == "popup") {
+              console.log(parentDiv.childNodes[i]);
+              parentDiv.childNodes[i].style.display = 'none';
+              break;
+            }
+        }
     }
 }
 
