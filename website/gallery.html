@@ -23,13 +23,12 @@
 
 #popup a, #popup a:visited {
 	position: relative;
-	display: block;
 	width: 130px;
 	line-height: 30px;
 	text-align: right;
 	padding: 0 10px;
 	margin: 0;
-	border: 1px solid #666;
+	border: none;
 	text-decoration: none;
 	font-size: 1em;
 	font-weight: bold;
@@ -40,13 +39,13 @@
 }
 
 #popup a:hover { 
-	background-color: #e9e9e2; 
+	background-color: none; 
 }
 
 /* the IE correction rule */
 #popup a:hover	{
 	color: #f00; 
-	background-color: #e9e9e2;
+	background-color: none;
 	text-indent: 0; /* added the default value */
 }
 
@@ -58,11 +57,11 @@
 	width: 320px;
 	margin: 0px;
 	padding: 10px;
-	color: #335500;
+	color: none;
 	font-weight: normal;
-	background: #e5e5e5;
+	background: none;
 	text-align: left;
-	border: 1px solid #666;
+	border: none;
 }
 </style>
 
@@ -187,10 +186,22 @@
                         <img src="https://i.ytimg.com/vi/Lv4SQy_9VLI/maxresdefault.jpg" onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)" alt="">
                         <div id="popup">  
                             <!-- <a id="imgGalleryDescrip"></a> -->
-                            <span><a id="imgGalleryDescrip"></a></span>
-                        </div>  
+                            <span><a id="imgGalleryDescrip" ></a></span>
+                        </div>    
                     </div>
                 </div>
+
+
+                <!-- Single Gallery Item -->
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="single-portfolio-content">
+                        <div id="popup">  
+                            <a>hj<img src="https://i.ytimg.com/vi/Lv4SQy_9VLI/maxresdefault.jpg" onmouseover="myImageMouseOver(event)" onmouseout="myImageMouseOut(event)" alt="">
+                            <span id="imgGalleryDescrip" >ss</span></a>
+                        </div>    
+                    </div>
+                </div>
+
 
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
