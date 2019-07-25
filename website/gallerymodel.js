@@ -40,17 +40,7 @@ function getImageDescription(imgLink, element) {
           var caption = final_caption(tags, description, confidence);
           console.log("caption", caption);
 
-          // get parent div
-          var parentDiv = element.parentElement;
-          for (var i = 0; i < parentDiv.childNodes.length; i++) {
-              if (parentDiv.childNodes[i].className == "popup") {
-                parentDiv.childNodes[i].style.display = "block";
-                // get the description
-                var descripDiv = parentDiv.childNodes[i].querySelectorAll("#imgGalleryDescrip");
-                descripDiv[0].innerHTML = caption;
-                break;
-              }
-          }
+          element.innerHTML = caption;
 
           // document.getElementById('imgGalleryDescrip').innerHTML = caption;
           var msg = new SpeechSynthesisUtterance();
@@ -68,12 +58,13 @@ function getImageDescription(imgLink, element) {
           console.log(msg.lang);
           window.speechSynthesis.speak(msg);
           //document.body.innerHTML = caption;
+
+
         }
     }
 
     http.send("{\"url\":\"" + imgLink + "\"}" );
   }
-
 
 
 
@@ -85,14 +76,17 @@ function myImageMouseOver (zEvent) {
     if (zEvent.type == 'mouseover') {
         // console.log("trying");
         console.log ('Entering src: ', zEvent.srcElement.currentSrc);
-        caption = getImageDescription(zEvent.srcElement.currentSrc, zEvent.srcElement);
-        // var parentDiv = zEvent.srcElement.parentElement;
-        // for (var i = 0; i < parentDiv.childNodes.length; i++) {
-        //     if (parentDiv.childNodes[i].className == "popup") {
-        //       parentDiv.childNodes[i].style.display = 'block';
-        //       break;
-        //     }
-        // }
+
+        var parentDiv = zEvent.srcElement.parentElement;
+        for (var i = 0; i < parentDiv.childNodes.length; i++) {
+            if (parentDiv.childNodes[i].className == "popup") {
+              // get the description
+              var descripDiv = parentDiv.childNodes[i].querySelectorAll("#imgGalleryDescrip");
+              getImageDescription(zEvent.srcElement.currentSrc, descripDiv[0]);
+              parentDiv.childNodes[i].style.display = "block";
+              break;
+            }
+        }
        /*  var msg = new SpeechSynthesisUtterance();
         var voices = window.speechSynthesis.getVoices();
         console.log(voices);
